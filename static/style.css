@@ -1,0 +1,278 @@
+a {
+  color: #4c4c4f;
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  text-align: center;
+  word-spacing: 5px;
+}
+
+
+.small-display {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: linear-gradient(to right, #0061FF, #529F33);
+  height: 100vh;
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+
+  header,
+  footer,
+  main {
+    display: none;
+  }
+
+  .small-display {
+    display: block;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+
+  header,
+  footer,
+  main {
+    display: none;
+  }
+
+  .small-display {
+    display: block;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0px;
+}
+
+/* navbar-brand */
+.navbar-brand {
+  font-family: 'Libre Baskerville', serif;
+  letter-spacing: 4px;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  margin-left: 18%;
+  margin-right: 40%;
+}
+
+.navbar {
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  /* box-shadow: 0 4px 12px 1px ; */
+}
+
+.nav-item {
+  padding: 0 70px;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  size: 3rem;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-nav {
+    margin: auto;
+  }
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #529F33;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(9,55,244, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+#intro {
+  text-align: center;
+  padding-top: 8%;
+  background: linear-gradient(to right, #393c4a, #c5ccd4);
+  height: 100vh;
+}
+
+
+.big-heading {
+  color: white;
+  font-weight: 700;
+}
+
+.consent-box {
+  font-size: 1rem;
+  color: white;
+}
+
+.consent-link {
+  font-size: 1rem;
+  color: white;
+}
+
+.consent-link:hover {
+  color: black;
+}
+
+.button {
+  margin-top: 20px;
+  color: #818599;
+  background-color: white;
+  border-radius: 25px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.mac-img {
+  width: 90%;
+}
+
+
+@media only screen and (max-width: 992px) {
+  .mac-img {
+    display: none
+  }
+}
+
+/* about page */
+.title {
+  margin-top: 2%;
+}
+
+.about-heading {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+
+.title-desc {
+  padding: 4% 7%;
+}
+
+.title-desc-1 {
+  color: #818599;
+
+}
+
+.title-desc-2 {
+  margin-top: 10%;
+  line-height: 1.2;
+}
+
+@media only screen and (max-width: 992px) {
+  .title-desc-2 {
+    margin-top: 0;
+  }
+}
+
+.title-video {
+  padding: 2% 0%;
+  width: 70%;
+}
+
+.description-text {
+  padding: 0% 20% 10%;
+  background-color: #818599;
+  color: white;
+  text-align: justify;
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+
+@media only screen and (max-width: 992px) {
+  .description-text {
+    padding: 0% 10% 10%;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}
+
+
+
+.association-details {
+  background-color: #529F33;
+  padding-top: 2%;
+}
+
+.association-text {
+  text-align: justify;
+  padding: 2% 8%;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+@media only screen and (max-width: 992px) {
+  .association-text {
+    text-align: center;
+  }
+}
+
+
+
+
+.green-curve-top {
+  margin-top: -10%;
+}
+
+.green-curve-bottom {
+  margin-bottom: -10%;
+}
+
+
+
+.association-img {
+  height: 80%;
+  width: auto;
+  padding: 0% 0%;
+
+}
+
+.logos {
+  background-color: #f4f4f4;
+  padding: 2% 0%;
+}
+
+.contact {
+  background-color: #333333;
+  color: white;
+  padding: 5% 0% 1%;
+
+}
+
+/* finished page */
+
+.title-finished {
+  margin-top: 6%;
+}
+
+.sharing {
+  margin: 7% 10% 5%;
+}
+
+.social {
+  margin: 2% 0%;
+}
+
+#features {
+  color: #f0f1f5;
+  text-align: center;
+  padding: 6rem 6rem;
+  background: linear-gradient(to right, #393c4a, #c5ccd4);
+}
+
+.material-symbols-outlined {
+  font-size: 50px;
+}
