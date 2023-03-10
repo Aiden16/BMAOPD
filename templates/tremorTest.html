@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test1</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='tremor.css')}}">
+  </head>
+  <body>
+    <div class="video">
+    <video id="videoElement" width="640" height="480" autoplay></video>
+    <h3 id="timerElement"></h3>
+    <h3 id="recordingIndicator"></h3>
+    </div>
+    <button id="recordButton">Start Recording</button>
+    <button id="stopButton">Stop</button>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/test1.js') }}"></script>
+
+  </body>
+</html>

@@ -10,5 +10,9 @@ def home():
 @app.route("/instruction")
 def instructionPage():
     return render_template('instruction.html')
+
+@app.route("/test1")
+def test1Page():
+    return render_template('tremorTest.html')
 if __name__ == "__main__":
     app.run(debug=True)

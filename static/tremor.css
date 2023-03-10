@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #393c4a, #c5ccd4);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#videoElement {
+    display: block;
+    margin: 0 auto;
+    width: 640px;
+    height: 480px;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.video {
+    text-align: center;
+}
+
+h3 {
+    display: inline;
+
+}
+
+button:hover {
+    background-color: #3E8E41;
+}
+
+button:disabled {
+    background-color: #E0E0E0;
+    color: #9E9E9E;
+    cursor: default;
+}
+
+#recordButton {
+    width: 150px;
+}
+
+#stopButton {
+    width: 100px;
+}
+
+#status {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#downloadLink {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#downloadLink:hover {
+    background-color: #3E8E41;
+}
