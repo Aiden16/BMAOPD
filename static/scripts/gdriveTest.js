@@ -12,13 +12,79 @@ $(document).ready(function () {
         alert("Please hold your hand infront of camera showing tips of your fingers!")
     }
 });
-navigator.mediaDevices.getUserMedia(constraints)
-    .then(stream => {
-        videoElement.srcObject = stream;
-    })
-    .catch(err => {
-        console.error('Error accessing media devices', err);
+// Load the Google API client library
+gapi.load('client', init);
+
+// Initialize the Google API client library
+function init() {
+    gapi.client.init({
+        apiKey: 'AIzaSyCcLQnen8T8qLUNxVUqzynf2n82NVQau_s',
+        clientId: '649981568433-pq20i12pb35i8ckq69d7kl1fti5bkkl6.apps.googleusercontent.com',
+        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
+        scope: 'https://www.googleapis.com/auth/drive.file'
+    }).then(function () {
+        // Authenticate the user with Google
+        return gapi.auth2.getAuthInstance().signIn();
+    }).then(function () {
+        // Get the user's access token
+        const accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token;
+
+        // Start recording the video
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then(function (mediaStream) {
+                videoElement.srcObject = mediaStream;
+                const mediaRecorder = new MediaRecorder(mediaStream);
+                mediaRecorder.ondataavailable = function (e) {
+                    chunks.push(e.data);
+                }
+
+                mediaRecorder.onstop = function () {
+                    // Save the recorded video to Google Drive
+                    uploadToDrive(accessToken, chunks);
+                }
+
+                // Stop recording after 10 seconds
+                setTimeout(function () {
+                    mediaRecorder.stop();
+                }, 10000);
+
+            })
+            .catch(function (err) {
+                console.error('Could not access media devices', err);
+            });
     });
+}
+function uploadToDrive(accessToken, chunks) {
+    const fileMetadata = {
+        name: 'recording.mp4',
+        parents: ['1k3iJVKL14PHo5JL8ukyhN4QC_hD-DZd4'] // Replace with the ID of the folder where you want to save the video
+    };
+    const media = {
+        mimeType: 'video/mp4',
+        body: new Blob(chunks, { type: 'video/mp4' })
+    };
+    gapi.client.drive.files.create({
+        resource: fileMetadata,
+        media: media,
+        fields: 'webViewLink',
+        access_token: accessToken
+    }).then(function (response) {
+        // Get the link to the uploaded file
+        const link = response.result.webViewLink;
+        console.log('File uploaded:', link);
+        // Do something with the link, such as display it to the user or send it to your server
+    }, function (error) {
+        console.error('Error uploading file:', error);
+    });
+}
+
+// navigator.mediaDevices.getUserMedia(constraints)
+//     .then(stream => {
+//         videoElement.srcObject = stream;
+//     })
+//     .catch(err => {
+//         console.error('Error accessing media devices', err);
+//     });
 
 let mediaRecorder;
 let chunks = [];
@@ -90,3 +156,4 @@ function stopRecording() {
     recordingIndicator.textContent = '';
     recordButton.disabled = false;
 }
+

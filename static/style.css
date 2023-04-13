@@ -276,3 +276,6 @@ h6 {
 .material-symbols-outlined {
   font-size: 50px;
 }
+a {
+  text-decoration: none;
+}

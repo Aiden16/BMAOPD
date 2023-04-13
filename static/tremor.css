@@ -83,3 +83,6 @@ button:disabled {
 #downloadLink:hover {
     background-color: #3E8E41;
 }
+a {
+    text-decoration: none;
+  }

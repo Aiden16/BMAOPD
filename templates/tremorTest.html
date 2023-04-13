@@ -1,19 +1,29 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Test1</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='tremor.css')}}">
-  </head>
-  <body>
-    <div class="video">
+
+<head>
+  <title>Test1</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='tremor.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+
+</head>
+
+<body>
+  <div class="video">
+    <h1>{{testType.type}}</h1>
+    <form id="myform" method="POST">
+      <input type="hidden" name="data" value="{{ testType.type }}">
+    </form>
     <video id="videoElement" width="640" height="480" autoplay></video>
     <h3 id="timerElement"></h3>
     <h3 id="recordingIndicator"></h3>
-    </div>
-    <button id="recordButton">Start Recording</button>
-    <button id="stopButton">Stop</button>
-    <script type="text/javascript" src="{{ url_for('static', filename='scripts/test1.js') }}"></script>
+  </div>
+  <button id="recordButton">Start Recording</button>
+  <button id="stopButton">Stop</button>
+  <a href="/{{testType.nextPage}}"><button id="stopButton">Next</button></a>
+  <script type="text/javascript" src="{{ url_for('static', filename='scripts/test1.js') }}"></script>
 
-  </body>
+</body>
+
 </html>
